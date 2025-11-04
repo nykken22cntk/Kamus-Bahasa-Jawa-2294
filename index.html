@@ -18,19 +18,10 @@
   }
   .header {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     position: relative;
     border-bottom: 5px solid #6e4b26;
     padding-bottom: 12px;
-  }
-  .header img {
-    max-width: 280px;
-    width: 90vw;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(107, 74, 33, 0.16);
-    border: 4px solid #a17033;
-    margin-bottom: 12px;
   }
   .header h1 {
     font-family: 'Georgia', serif;
@@ -42,50 +33,54 @@
     text-shadow: 1px 1px 0 #b28c4d;
   }
   .admin-toggle {
-    position: absolute;
+    position: fixed;
     top: 15px;
-    right: 17px;
-    background: none;
+    right: 15px;
+    width: 50px;
+    height: 44px;
+    background: #a17033;
+    border-radius: 10px;
     border: none;
-    font-size: 26px;
-    color: #6e4b26;
     cursor: pointer;
-    user-select: none;
-    transition: color 0.3s ease;
-    z-index: 10;
-  }
-  .admin-toggle:hover {
-    color: #a17033;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 6px 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   }
   .admin-toggle span {
     display: block;
-    width: 28px;
-    height: 4px;
-    margin: 5px 0;
-    background-color: currentColor;
-    border-radius: 3px;
+    height: 6px;
+    background-color: white;
+    border-radius: 4px;
   }
   #adminPanel {
     display: none;
     background: #fef7e8;
-    padding: 18px 24px;
-    border: 2.5px solid #a17033;
-    border-radius: 14px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 12px rgba(161, 112, 51, 0.5);
+    padding: 20px;
+    border: 3px solid #a17033;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 18px rgba(161, 112, 51, 0.6);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
   form {
     margin-bottom: 10px;
   }
   input {
-    margin: 8px 12px 8px 0;
-    padding: 9px;
-    width: 210px;
-    border-radius: 7px;
-    border: 1.5px solid #6e4b26;
-    font-size: 1em;
+    margin: 8px 8px 18px 0;
+    padding: 14px;
+    width: 95vw;
+    max-width: 360px;
+    border-radius: 9px;
+    border: 1.6px solid #6e4b26;
+    font-size: 1.1em;
     color: #4b3b2b;
     background: #fcf9f3;
+    display: block;
   }
   input::placeholder {
     color: #996633;
@@ -94,40 +89,47 @@
   button {
     background-color: #a17033;
     border: none;
-    border-radius: 7px;
+    border-radius: 9px;
     color: white;
     font-weight: 700;
-    font-size: 1.05em;
-    padding: 9px 22px;
-    margin: 5px 0;
+    font-size: 1.15em;
+    padding: 14px 24px;
+    margin: 12px 0;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.28s ease;
   }
   button:hover {
     background-color: #6e4b26;
   }
   #search {
-    width: 320px;
-    padding: 9px;
-    border-radius: 10px;
+    width: 95vw;
+    max-width: 360px;
+    padding: 14px;
+    border-radius: 11px;
     border: 2px solid #6e4b26;
-    font-size: 1.05em;
-    margin-bottom: 22px;
+    font-size: 1.15em;
+    margin-bottom: 34px;
     background: #fcf9f3;
     color: #4b3b2b;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   table {
-    width: 100%;
+    width: 95vw;
+    max-width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 0 14px rgba(161, 112, 51, 0.22);
+    box-shadow: 0 0 24px rgba(161, 112, 51, 0.26);
     background: #fcf9f3;
-    border-radius: 14px;
+    border-radius: 18px;
     overflow: hidden;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
   }
   th, td {
-    border: 1.5px solid #d7ba8c;
-    padding: 12px 15px;
+    border: 1.8px solid #d7ba8c;
+    padding: 16px 22px;
     text-align: left;
     vertical-align: middle;
   }
@@ -135,36 +137,25 @@
     background-color: #a17033;
     color: #fff;
     font-weight: 700;
-    letter-spacing: 1.1px;
+    letter-spacing: 1.4px;
   }
   td {
     color: #4b3b2b;
   }
   #aksiHeader {
-    width: 150px;
-  }
-  @media (max-width: 600px) {
-    input, #search {
-      width: 90vw;
-    }
-    table, th, td {
-      font-size: 0.95em;
-    }
-    .header img {
-      width: 90vw;
-    }
+    width: 170px;
   }
 </style>
 </head>
 <body>
 
 <div class="header" role="banner">
-  <img src="https://cdn.discordapp.com/attachments/1118790285809079940/1152905787631347833/pemain_mint_4orang.png" alt="Anak-anak dengan pakaian adat Jawa bergembira di alam pedesaan" />
-  <h1>Kamus Bahasa Jawa</h1>
-  <button class="admin-toggle" onclick="toggleAdmin()" aria-label="Tombol Mode Admin" title="Mode Admin">
-    <span></span><span></span><span></span>
-  </button>
+  <h1>Selamat datang di Kampus Bahasa Jawa</h1>
 </div>
+
+<button class="admin-toggle" id="btnAdminToggle" aria-label="Toggle Mode Admin" title="Toggle Mode Admin">
+  <span></span><span></span><span></span>
+</button>
 
 <section id="adminPanel" aria-label="Panel Admin">
   <form id="addForm">
@@ -172,11 +163,10 @@
     <input type="text" id="ngoko" placeholder="Ngoko" required autocomplete="off" />
     <input type="text" id="kramaMadya" placeholder="Krama Madya" required autocomplete="off" />
     <input type="text" id="kramaInggil" placeholder="Krama Inggil" required autocomplete="off" />
-    <button type="submit">Tambah</button>
+    <button type="submit">Tambah Kosakata</button>
   </form>
 </section>
 
-<p>Cari kosakata:</p>
 <input type="search" id="search" placeholder="Ketik kosakata untuk cari..." aria-label="Cari Kosakata" />
 
 <table id="kamusTable" role="table" aria-label="Tabel Kamus Jawa">
@@ -189,62 +179,85 @@
       <th scope="col" id="aksiHeader" style="display:none;">Aksi</th>
     </tr>
   </thead>
-  <tbody id="tableBody" role="rowgroup"></tbody>
+  <tbody id="tableBody"></tbody>
 </table>
 
 <script>
+  const btnAdminToggle = document.getElementById('btnAdminToggle');
+  const adminPanel = document.getElementById('adminPanel');
   const form = document.getElementById('addForm');
   const tableBody = document.getElementById('tableBody');
   const searchInput = document.getElementById('search');
-  const adminPanel = document.getElementById('adminPanel');
   const aksiHeader = document.getElementById('aksiHeader');
+
   let kamus = JSON.parse(localStorage.getItem('kamusJawa')) || [];
   let isAdmin = false;
 
   function renderTable(filter = '') {
     tableBody.innerHTML = '';
-    const filteredKamus = kamus.filter(item =>
-      item.kosakata.toLowerCase().includes(filter.toLowerCase())
-    );
-    filteredKamus.forEach((item, index) => {
-      const row = document.createElement('tr');
-      row.innerHTML = \`
-          <td>\${item.kosakata}</td>
-          <td>\${item.ngoko}</td>
-          <td>\${item.kramaMadya}</td>
-          <td>\${item.kramaInggil}</td>
-          <td style="display: \${isAdmin ? 'table-cell' : 'none'}">
-            <button onclick="editItem(\${index})" aria-label="Edit kosakata \${item.kosakata}">Edit</button>
-            <button onclick="deleteItem(\${index})" aria-label="Hapus kosakata \${item.kosakata}">Hapus</button>
-          </td>
-        \`;
-      tableBody.appendChild(row);
+    const filtered = kamus.filter(item => item.kosakata.toLowerCase().includes(filter.toLowerCase()));
+    filtered.forEach((item, index) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${item.kosakata}</td>
+        <td>${item.ngoko}</td>
+        <td>${item.kramaMadya}</td>
+        <td>${item.kramaInggil}</td>
+        <td style="display: ${isAdmin ? 'table-cell' : 'none'}">
+          <button onclick="editItem(${index})">Edit</button>
+          <button onclick="deleteItem(${index})">Hapus</button>
+        </td>`;
+      tableBody.appendChild(tr);
     });
   }
 
-  function saveToLocalStorage() {
+  function saveData() {
     localStorage.setItem('kamusJawa', JSON.stringify(kamus));
   }
 
-  form.addEventListener('submit', e => {
+  btnAdminToggle.addEventListener('click', () => {
+    if (isAdmin) {
+      if(confirm("Keluar dari mode admin?")) {
+        isAdmin = false;
+        adminPanel.style.display = 'none';
+        aksiHeader.style.display = 'none';
+        renderTable(searchInput.value);
+      }
+    } else {
+      const pass = prompt("Masukkan password admin:");
+      if(pass === "Kamusku2294"){
+        isAdmin = true;
+        adminPanel.style.display = 'block';
+        aksiHeader.style.display = 'table-cell';
+        alert("Mode admin aktif!");
+        renderTable(searchInput.value);
+      } else {
+        alert("Password salah!");
+      }
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!isAdmin) return;
     const kosakata = document.getElementById('kosakata').value.trim();
     const ngoko = document.getElementById('ngoko').value.trim();
     const kramaMadya = document.getElementById('kramaMadya').value.trim();
     const kramaInggil = document.getElementById('kramaInggil').value.trim();
-    if (!kosakata || !ngoko || !kramaMadya || !kramaInggil) {
-      alert('Semua kolom harus diisi lengkap!');
+
+    if(!kosakata || !ngoko || !kramaMadya || !kramaInggil) {
+      alert("Semua kolom harus diisi lengkap!");
       return;
     }
+
     kamus.push({ kosakata, ngoko, kramaMadya, kramaInggil });
-    saveToLocalStorage();
+    saveData();
     renderTable(searchInput.value);
     form.reset();
   });
 
   function editItem(index) {
-    if (!isAdmin) return;
+    if(!isAdmin) return;
     const item = kamus[index];
     document.getElementById('kosakata').value = item.kosakata;
     document.getElementById('ngoko').value = item.ngoko;
@@ -254,41 +267,22 @@
   }
 
   function deleteItem(index) {
-    if (!isAdmin) return;
-    if (confirm('Yakin ingin menghapus kosakata ini?')) {
+    if(!isAdmin) return;
+    if(confirm("Yakin ingin menghapus kosakata ini?")) {
       kamus.splice(index, 1);
-      saveToLocalStorage();
+      saveData();
       renderTable(searchInput.value);
     }
   }
-
-  function toggleAdmin() {
-    if (isAdmin) {
-      if (confirm('Keluar dari mode admin?')) {
-        isAdmin = false;
-        adminPanel.style.display = 'none';
-        aksiHeader.style.display = 'none';
-        renderTable(searchInput.value);
-      }
-      return;
-    }
-    const password = prompt('Masukkan password admin:');
-    if (password === 'Kamusku2294') {
-      isAdmin = true;
-      adminPanel.style.display = 'block';
-      aksiHeader.style.display = 'table-cell';
-      renderTable(searchInput.value);
-      alert('Mode admin aktif!');
-    } else {
-      alert('Password salah!');
-    }
-  }
-
+  
   searchInput.addEventListener('input', () => {
     renderTable(searchInput.value);
   });
 
   renderTable();
+
+  window.editItem = editItem;
+  window.deleteItem = deleteItem;
 </script>
 </body>
 </html>
